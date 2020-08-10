@@ -69,7 +69,7 @@ function createMessage(benchmarks: any, oldBenchmarks: any) {
 
 async function run() {
   if (github.context.eventName !== "pull_request") {
-    core.setFailed("Can only run on pull requests!");
+    core.setFailed("Can only run on pull requests. This context is ${github.context.eventName}");
     return;
   }
 
